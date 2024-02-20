@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: "Inter", sans-serif;
+}
+
+.accounts-bg{
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.theme-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Track */
+.theme-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.theme-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
