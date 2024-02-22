@@ -31,3 +31,15 @@
   background: rgba(0,0,0,0.2);
   border-radius: 8px;
 }
+
+.quickbook-banner{
+  background-image: url("/images/bg/quickbook-banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.card{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}

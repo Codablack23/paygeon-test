@@ -1,0 +1,55 @@
+import { IMagicBellTheme } from "@magicbell/magicbell-react";
+import { DeepPartial } from "@magicbell/magicbell-react/dist/lib/types";
+
+export const magicbellTheme:DeepPartial<IMagicBellTheme> = {
+    "icon":{
+        "borderColor":"#747A80",
+        "width":"24px"
+    },
+    "banner":{
+        "fontSize":"14px",
+        "backgroundColor":"#F8F5FF",
+        "textColor":"#3A424D","backgroundOpacity":1
+    },
+    "unseenBadge":{"backgroundColor":"#F80808"},
+    "header":{
+        "fontFamily":"inherit",
+        "fontSize":"15px",
+        "backgroundColor":"#FFFFFF",
+        "textColor":"#5225C1",
+        "borderRadius":"16px"
+    },
+    "footer":{
+        "fontSize":"15px",
+        "backgroundColor":"#FFFFFF",
+        "textColor":"#5225C1",
+        "borderRadius":"16px"
+    },
+    "notification":{
+        "default":{
+            "fontFamily":"inherit",
+            "fontSize":"14px",
+            "textColor":"#3A424D",
+            "borderRadius":"16px",
+            "backgroundColor":"#FFFFFF",
+            "hover":{"backgroundColor":"#F2EDFC"},
+            "state":{"color":"transparent"},
+            "margin":"8px"
+        },
+        "unseen":{
+            "textColor":"#3A424D",
+            "backgroundColor":"#F8F5FF",
+            "hover":{"backgroundColor":"#F2EDFC"},
+            "state":{"color":"#5225C1"}},
+            "unread":{"textColor":"#3A424D",
+            "backgroundColor":"#F8F5FF",
+            "hover":{"backgroundColor":"#F2EDFC"},
+            "state":{"color":"#5225C1"}
+        }
+    },
+    "dialog":{
+        "backgroundColor":"#F5F5F5",
+        "textColor":"#313131",
+        "accentColor":"#5225C1"
+    }
+};

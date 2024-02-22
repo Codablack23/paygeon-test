@@ -37,7 +37,7 @@ function SidebarLink(props:{
 
 export default function Sidebar(props:SideBarProps){
     return (
-        <div className="sidebar bg-light-500 pl-8 py-8 fixed top-0 left-0 h-full w-1/4">
+        <div className="sidebar hidden md:block bg-light-500 pl-8 py-8 fixed top-0 left-0 h-full w-[250px]">
             <Image
             src="/images/icons/logo.png"
             preview={false}

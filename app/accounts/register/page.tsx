@@ -1,7 +1,6 @@
 "use client";
 import { Checkbox, Image, Spin } from "antd";
-import InputField, { SelectInputField } from "../components/InputField";
-import { useState } from "react";
+import InputField from "../components/InputField";
 import TogglePasswordShown from "../components/TogglePasswordShown";
 import Link from "next/link";
 import usePasswordVisibility from "../hooks/usePasswordVisibity";
@@ -12,6 +11,8 @@ export default function Page(){
     const {
         email,
         handleEmailInput,
+        name,
+        handleNameInput,
         password,
         handlePasswordInput,
         confirmPassword,
@@ -35,6 +36,21 @@ export default function Page(){
                 <p className="text-base mt-2 text-[#747A80]">Enter your details to get started</p>
             </header>
             <form onSubmit={handleSignUp}>
+                <InputField
+                    value={name}
+                    containerClass="mb-6"
+                    handleInput={handleNameInput}
+                    label={"Legal business name"}
+                    type={"text"}
+                    minLength={3}
+                    required
+                    placeholder="Provide your legal business name"
+                    suffixComponent={
+                        <Image
+                        src="/images/icons/envelope.png"
+                        />
+                    }
+                />
                 <InputField
                     value={email}
                     containerClass="mb-6"

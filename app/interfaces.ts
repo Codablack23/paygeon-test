@@ -65,6 +65,10 @@ export interface DashboardLinkObject{
     type?:"button"|"url",
     handler?:()=>void
 }
+export interface LinkComponentProps{
+    link:DashboardLinkObject,
+    active:string
+}
 export interface HeaderProps{
     pageTitle:string,
 }
@@ -79,4 +83,10 @@ export interface AuthContextObject{
 
 export interface ContextProviderProps{
     children:ReactNode
+}
+export interface IntegrationDataObject{
+    bgUrl:string,
+    name:string,
+    logo:string,
+    link:string
 }
