@@ -1,5 +1,4 @@
 "use client"
-
 import { useRef, useState } from "react";
 import MainLayout from "../components/MainLayout";
 import PerksLoader from "./Loader";

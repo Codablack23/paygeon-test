@@ -1,5 +1,6 @@
 "use client"
-import { Player } from "@lordicon/react"
+import {Player}  from "@lordicon/react/"
+import dynamic from "next/dynamic"
 import { useRef, useEffect, useState } from "react"
 
 interface Data{
@@ -8,8 +9,7 @@ interface Data{
     icon:Data,
     color?:string
   }
-  
-  
+   
   export default function LordIcon(props:LordIconProps){
       const [shown,setShown] = useState(false)
       const playerRef = useRef<Player>(null)

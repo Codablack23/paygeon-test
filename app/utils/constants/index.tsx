@@ -1,12 +1,12 @@
 "use client"
 import { DashboardLinkObject, IntegrationDataObject } from "@/app/interfaces";
-import LordIcon from "@/app/components/LordIcon";
 import { iconData as icons } from "./iconData";
-import { JIRA_CONSTANTS } from "./jiraConstants";
-
+import dynamic from "next/dynamic";
 const baseRoute = "/dashboard"
 
-
+  const LordIcon:any = dynamic(()=>import('../../components/LordIcon'),{
+    ssr:false
+  })
 export const dashboardLinks:DashboardLinkObject[] = [
     {
         url:`${baseRoute}/inbox`,
