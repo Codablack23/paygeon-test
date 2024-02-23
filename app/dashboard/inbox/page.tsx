@@ -1,3 +1,4 @@
+"use client"
 import MainLayout from "../components/MainLayout";
 import MercoaPage from "./components/Mercoa";
 
