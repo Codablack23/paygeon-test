@@ -27,10 +27,15 @@ export default function Page(){
     <>
     {contextHolder}
     <section className="pt-8">
-            <Image
-            src="/images/logo.png"
-            preview={false}
-            />
+            <div className="mt-1">
+                <div className="max-w-[150px]">
+                    <Image
+                    src="/images/paygeon-logo.svg"
+                    className="w-full"
+                    preview={false}
+                    />
+                </div>
+            </div>
             <header className="mb-8 mt-[60px]">
                 <h1 className="font-extrabold text-5xl">Sign up</h1>
                 <p className="text-base mt-2 text-[#747A80]">Enter your details to get started</p>

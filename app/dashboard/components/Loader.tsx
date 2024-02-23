@@ -32,7 +32,7 @@ export default function PageLoader(){
                 <div className="mt-12">
                 {Array(6).fill("").map((item,i)=>{
                         return(
-                        <div className="mt-4" key={`page-loader-${item}-${i}`}>
+                        <div className="mt-4" key={`page-loader-again-${item}-${i}`}>
                             <Skeleton.Button active block style={{height:"15px"}}/>
                             <div className="w-1/2 mt-1">
                             <Skeleton.Button active block style={{height:"15px"}}/>

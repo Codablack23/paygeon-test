@@ -1,7 +1,7 @@
 import Link from "next/link";
 import MainLayout from "../components/MainLayout";
 import { Image } from "antd";
-import { integrationsData } from "@/app/utils/constants";
+import { integrationsData } from "@/app/utils/constants/integrationsData";
 import { IntegrationDataObject } from "@/app/interfaces";
 
 function Integration(props:IntegrationDataObject){

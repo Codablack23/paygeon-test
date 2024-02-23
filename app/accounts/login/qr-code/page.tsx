@@ -8,10 +8,16 @@ import { text } from "stream/consumers";
 
 export default function Page(){
     return(
-        <section className="pt-2">
-            <Image
-            src="/images/logo.png"
-            />
+        <section className="pt-8">
+            <div className="mt-1">
+                <div className="max-w-[150px]">
+                    <Image
+                    src="/images/paygeon-logo.svg"
+                    className="w-full"
+                    preview={false}
+                    />
+                </div>
+            </div>
             <header className="mb-8 mt-[60px]">
                 <h1 className="font-extrabold text-4xl">Log in with QR code</h1>
                 <p className="text-base mt-2 text-[#747A80]">Scan this code with the mobile app to log in instantly</p>

@@ -18,6 +18,7 @@ function SidebarLink(props:{
         return (
             <button
             onClick={link.handler}
+            id={link.id}
             className={`w-full ${link.className} inline-flex items-center gap-4 font-bold py-4 text-left ${isActive?active:inActive}`}>
             {isActive?link.activeIcon:link.icon}
             {link.name}
@@ -27,6 +28,7 @@ function SidebarLink(props:{
     return (
         <Link href={link.url}>
         <button
+        id={link.id}
         className={`w-full ${link.className} inline-flex items-center gap-4 font-bold py-4 text-left ${isActive?active:inActive}`}>
         {isActive?link.activeIcon:link.icon}
         {link.name}
@@ -35,15 +37,19 @@ function SidebarLink(props:{
     )
 }
 
+
 export default function Sidebar(props:SideBarProps){
     return (
+        <>
         <div className="sidebar hidden md:block bg-light-500 pl-8 py-8 fixed top-0 left-0 h-full w-[250px]">
+           <div className="max-w-[150px]">
             <Image
-            src="/images/icons/logo.png"
-            preview={false}
-            className="mb-8"
-            />
-            <p className="mb-4 font-light">Navigation</p>
+                src="/images/paygeon-logo.svg"
+                preview={false}
+                className="mb-8 w-full"
+                />
+           </div>
+            <p className="mb-4 mt-10 text-lg font-bold">Navigation</p>
             {dashboardLinks.map(link=>(
                 <SidebarLink
                 link={link}
@@ -52,5 +58,6 @@ export default function Sidebar(props:SideBarProps){
                 />
            ))}
         </div>
+        </>
     )
 }

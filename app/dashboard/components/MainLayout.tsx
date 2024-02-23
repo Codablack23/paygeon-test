@@ -6,6 +6,7 @@ import PageLoader from "./Loader";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "@/app/contexts/AuthContext";
 import BottomBar from "./BottomBar";
+import JiraScript from "@/app/utils/JiraScript";
 
 export default  function MainLayout(props:MainLayoutProps){
     const {loading,user} = useContext(AuthContext)
@@ -17,6 +18,7 @@ export default  function MainLayout(props:MainLayoutProps){
     },[loading,user])
     return(
         <main>
+            <JiraScript/>
             <BottomBar active={props.active}/>
             <Sidebar active={props.active}/>
             {loading || user === null

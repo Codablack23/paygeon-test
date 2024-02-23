@@ -4,11 +4,17 @@ interface Props{
 }
 import { magicbellTheme } from "@/app/utils/config";
 import MagicBell, { FloatingNotificationInbox } from "@magicbell/magicbell-react";
+import { Suspense } from "react";
 
+const DefaultButton = ()=>(
+<div className="border hidden h-10 w-10 sm:flex items-center justify-center rounded-md border-light-800">
+<i className="bi bi-bell text-xl md:text-3xl"></i>
+</div>
+)
 const apiKey = process.env.NEXT_PUBLIC_MAGICBELL_KEY
 export default function MagicbellButton(props:Props){
     return(
-     <>
+     <Suspense fallback={<DefaultButton/>}>
        <div className="border hidden h-10 w-10 sm:flex items-center justify-center rounded-md border-light-800">
          <MagicBell
         apiKey={apiKey?apiKey:""}
@@ -35,7 +41,7 @@ export default function MagicbellButton(props:Props){
         {(props) => <FloatingNotificationInbox width={400} height={500} {...props} />}
       </MagicBell>
        </div>
-     </>
+     </Suspense>
     )
 }
 

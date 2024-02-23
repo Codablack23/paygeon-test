@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import ExternalScript from "./scripts";
 import AuthContextProvider from "../contexts/AuthContext";
+import JiraScript from "../utils/JiraScript";
 
 export const metadata: Metadata = {
   title: "Paygeon | Dashboard",

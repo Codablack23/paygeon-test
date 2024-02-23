@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import MainLayout from "../components/MainLayout";
 import PerksLoader from "./Loader";
 
@@ -13,10 +13,10 @@ export default function Page(){
                 <iframe
                 ref={iframeRef}
                 width="100%"
-                height="100vh"
+                className="theme-scrollbar"
                 onLoad={()=>setLoading(false)}
                 style={{
-                    minHeight:"100vh",
+                    minHeight:"80vh",
                     display:loading?"none":"block"
                 }}
                 src="https://v2-embednotion.com/40b259eafeed4b21ac99345303a634f3?v=e337bfd843cd412681404b58dd6bb3d7&pvs=4"

@@ -21,12 +21,15 @@ export default function Page(){
     return(
         <>
         {contextHolder}
-        <section className="">
-            <div className="mt-8 hidden md:block">
-                <Image
-                src="/images/logo.png"
-                preview={false}
-                />
+        <section className="pt-8">
+            <div className="mt-1">
+                <div className="max-w-[150px]">
+                    <Image
+                    src="/images/paygeon-logo.svg"
+                    className="w-full"
+                    preview={false}
+                    />
+                </div>
             </div>
             <header className="mb-8 mt-[30px] sm:mt-[60px] text-center sm:text-left">
                 <h1 className="font-extrabold text-4xl sm:text-5xl">Sign in</h1>

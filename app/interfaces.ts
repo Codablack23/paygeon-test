@@ -61,7 +61,9 @@ export interface DashboardLinkObject{
     slug:string,
     icon?:ReactNode,
     activeIcon?:ReactNode,
+    tabActiveIcon?:ReactNode
     className?:string
+    id?:string
     type?:"button"|"url",
     handler?:()=>void
 }
