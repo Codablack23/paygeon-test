@@ -1,7 +1,11 @@
-import { User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateCurrentUser, updateProfile } from "firebase/auth"
 import { auth } from "../utils/firebaseConfig"
 import { FirebaseError } from "firebase/app"
 
+interface ProfileUpdateData{
+    displayName?:string
+    photoURL?:string
+}
 interface FirebaseAuthResponse{
     status:"pending"|"failed"|"success",
     message:string|null,
@@ -88,6 +92,32 @@ class FirebaseAuthService{
         }
         try {
             await signOut(auth)
+        } catch (error) {
+            console.log("error")
+            response.error = error
+            response.status = "failed"
+            response.message = null
+            response.data = null
+            response.error_message ="An Error occured please try again later"
+            if(error instanceof FirebaseError){
+                response.error_message = capitalizeWord(error.code.replace("auth/",""))
+            }
+        }
+        return response
+    }
+    async updateProfile(user:User,data:ProfileUpdateData){
+        const response:FirebaseAuthResponse = {
+            status:"pending",
+            error:"A request have not been sent or is still pending",
+            error_message:"A request have not been sent or is still pending",
+            message:null,
+        }
+        try {
+            await updateProfile(user,data)
+            response.status = "success"
+            response.error=null
+            response.error_message=null
+            response.message ="Profile Updated successfully"
         } catch (error) {
             console.log("error")
             response.error = error

@@ -7,6 +7,7 @@ import useAuthData from "./useAuthData";
 export const AuthContext = createContext<AuthContextObject>({
     loading:false,
     user:null,
+    entity:null,
     updateUserData(newData) {}
 })
 

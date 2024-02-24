@@ -1,11 +1,12 @@
 export default function SearchBar(){
     return(
        <>
-        <div className="hidden md:flex gap-2 items-center rounded-md p-2 px-2 border border-light-800">
+        <div className="hidden md:flex gap-2 component-500 items-center rounded-md p-2 px-2 border-500">
             <i className="bi bi-search"></i>
             <input
             type="text"
             placeholder="Type to search..."
+            className="component-500"
             style={{
                 outline:"none"
             }}

@@ -7,7 +7,8 @@ interface Data{
     [key:string]:any
   }interface LordIconProps{
     icon:Data,
-    color?:string
+    color?:string,
+    size?:number
   }
    
   export default function LordIcon(props:LordIconProps){
@@ -28,7 +29,7 @@ interface Data{
           <Player
           ref={playerRef}
           icon={props.icon}
-          size={24}
+          size={props.size?props.size:24}
           colorize={props.color?props.color:"#000000"}
           />
           :null}

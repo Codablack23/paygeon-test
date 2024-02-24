@@ -1,24 +1,22 @@
 import { Metadata } from "next";
 import AuthContextProvider from "../contexts/AuthContext";
-import JiraScript from "../utils/JiraScript";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemContext";
+import useTheme from "./hooks/useTheme";
 
 export const metadata: Metadata = {
   title: "Paygeon | Dashboard",
   description: "Paygeon dashboard",
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
+type Props = Readonly<{
   children: React.ReactNode;
-}>) {
+}>
+export default function RootLayout({children}:Props) {
   return (
     <html lang="en">
-      <body className="bg-white">
         <AuthContextProvider>
         {children}
         </AuthContextProvider>
-        </body>
     </html>
   );
 }

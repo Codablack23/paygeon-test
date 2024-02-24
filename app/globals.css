@@ -3,6 +3,65 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.app,
+.animate{
+  transition: all ease 0.2s;
+}
+.app{
+  background: #fff;
+}
+.app .main-component{
+  background:#fff;
+}
+.app .component{
+  background-color: #747A80;
+  color: #EBF0F0;
+}
+.app .component-800{
+  background-color: #CFDBD5B2;
+}
+.app .component-500{
+  background-color: #EBF0F0;
+}
+.app .border{
+  border: 1px solid #747A80;
+}
+.app .border-800{
+  border: 1px solid #CFDBD5B2;
+}
+.app .border-500{
+  border: 1px solid #EBF0F0;
+}
+.app.dark{
+  background:#353941;
+}
+.app.dark *{
+  color: #EBF0F0;
+}
+.app.dark .main-component{
+  background:#000;
+}
+.app.dark .component{
+ background:#26282B;
+}
+.app.dark .component-800{
+ background:#26282B;
+}
+.app.dark .component-500{
+ background:#26282B;
+}
+.app.dark .border{
+  border: 1px solid #424242;
+}
+.app.dark .border-800{
+  border: 1px solid #424242;
+}
+.app.dark .border-500{
+  border: 1px solid #424242;
+}
+
+
 *{
   font-family: "Inter", sans-serif;
 }

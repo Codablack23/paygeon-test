@@ -16,6 +16,8 @@ const config: Config = {
       colors:{
         "light":"#747A80",
         "light-800":"#CFDBD5B2",
+        "dark":"#26282B",
+        "dark-component":"#353941",
         "light-500":"#EBF0F0",
         "theme":"#0052FF"
       }

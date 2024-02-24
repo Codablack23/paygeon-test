@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css"
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import ThemeContextProvider from "./contexts/ThemContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AntdRegistry>{children}</AntdRegistry>
+          <ThemeContextProvider>
+            <AntdRegistry>{children}</AntdRegistry>
+          </ThemeContextProvider>
         </body>
     </html>
   );

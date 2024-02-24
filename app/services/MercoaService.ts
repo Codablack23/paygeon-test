@@ -7,7 +7,7 @@ const mercoa = new MercoaClient({
 
 interface Data{
     name:string,
-    [key:string]:string | number | boolean
+    email?:string,
 }
 interface MercoaResponse{
     status:"success"|"failed"|"pending",
@@ -24,6 +24,9 @@ class MercoaService{
                 return null
             }
             const token = await mercoa.entity.getToken(entities.data[0].id, {
+                entity: {
+                    "enableMercoaPayments": true // If this is true, the user will run though Mercoa's KYB onboarding and will be able to use our built-in payment rails. If you are using your own payment rails, set this to false.
+                },
                 pages: {
                     paymentMethods: true,
                     notifications: true
@@ -83,6 +86,11 @@ class MercoaService{
         }
     }
     async updateEntity(id:string,data:Data){
+        const response:MercoaResponse = {
+            status:"pending",
+            entity:null,
+            error_message:null
+        }
         try {
             await mercoa.entity.update(id,{
                 isCustomer: true,
@@ -96,13 +104,14 @@ class MercoaService{
                     }
                 }
             });
-            return{status:"success"}
+            response.status = "success"
         } catch (error) {
             console.log(error)
+            response.error = error
+            response.status = "failed"
+            response.error_message ="An Error occured in our servers please try again later"
         }
-        return {
-            status:"failed"
-        }
+        return response;
     }
 }
 

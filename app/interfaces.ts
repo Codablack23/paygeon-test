@@ -1,4 +1,5 @@
 import { User } from "firebase/auth";
+import {Mercoa} from  "@mercoa/javascript"
 import { ReactNode } from "react";
 
 export interface Error{
@@ -7,7 +8,9 @@ export interface Error{
         message:string
     }
 }
-
+export interface Data{
+    [key:string]:any
+}
 export type ErrorObject = null | Error
 
 export interface SelectOption{
@@ -16,9 +19,9 @@ export interface SelectOption{
 }
 export interface InputFieldProps{
     label:string,
-    value:string,
-    type:string,
-    placeholder:string,
+    value:string|null,
+    type?:string,
+    placeholder?:string,
     containerClass?:string,
     handleInput:(value:string)=>void,
     suffixComponent?:ReactNode,
@@ -80,6 +83,7 @@ export interface SideBarProps{
 export interface AuthContextObject{
     user:null | User
     loading:boolean
+    entity:Mercoa.EntityWithPaymentMethodResponse | null
     updateUserData:(newData:null | User)=>void
 }
 

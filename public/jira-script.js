@@ -1,6 +1,10 @@
 const myWindow = window
-const triggerEl = document.getElementById("report-problem")
+const triggerEl = document.querySelector(".report-problem-btn")
 const triggerEl2 = document.getElementById("report-problem-2")
+
+console.log({
+    triggerEl,triggerEl2
+})
 
 myWindow.ATL_JQ_PAGE_PROPS = {
     "triggerFunction": function (showCollectorDialog) {
@@ -10,10 +14,6 @@ myWindow.ATL_JQ_PAGE_PROPS = {
             showCollectorDialog();
             }, 50);
     })
-    triggerEl2.addEventListener("click",()=>{
-        setTimeout(function () {
-            showCollectorDialog();
-            }, 50);
-    })
+   
 }
 }

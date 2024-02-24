@@ -6,9 +6,7 @@ export default function Invoices(){
 
     return(
         <MainLayout active="inbox">
-            <div className="max-h-screen overflow-y-auto">
                 <MercoaPage/>
-            </div>
         </MainLayout>
     )
 }

@@ -10,7 +10,7 @@ interface Props{
 function Content(){
     return(
         <div className="mr-2 p-1">
-            <Link href={"/dashboard/settings"}><button className="w-full bg-theme rounded-md text-white p-2 border-b border-light-500">Settings</button></Link>
+            <Link href={"/dashboard/settings"}><button className="w-full bg-theme rounded-md text-white p-2">Settings</button></Link>
             <button className="w-full p-2">Logout</button>
         </div>
     )
@@ -18,7 +18,7 @@ function Content(){
 export default function ProfilePicture(props:Props){
     const {imageURL} = props
     return(
-        <Popover content={<Content/>}>
+        <Popover className="component-500" content={<Content/>}>
             {imageURL
             ?<div className="h-7 w-7 rounded-full bg-gray-200">
                 <Image
