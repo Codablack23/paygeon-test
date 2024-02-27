@@ -9,11 +9,19 @@ const baseRoute = "/dashboard"
   })
 export const dashboardLinks:DashboardLinkObject[] = [
     {
+        url:`${baseRoute}/`,
+        slug:"dashboard",
+        name:"Dashboard",
+        icon:<LordIcon color="#747A80" icon={icons.analytics}/>,
+        darkModeActiveIcon:<LordIcon color="#fff" icon={icons.analytics}/>,
+        activeIcon:<LordIcon icon={icons.analytics}/>
+    }, 
+    {
         url:`${baseRoute}/inbox`,
         slug:"inbox",
         name:"Inbox",
         icon:<LordIcon color="#747A80" icon={icons.inbox}/>,
-        tabActiveIcon:<LordIcon color="#fff" icon={icons.inbox}/>,
+        darkModeActiveIcon:<LordIcon color="#fff" icon={icons.inbox}/>,
         activeIcon:<LordIcon icon={icons.inbox}/>
     },
     {
@@ -21,7 +29,7 @@ export const dashboardLinks:DashboardLinkObject[] = [
         slug:"perks",
         name:"Perks",
         icon:<LordIcon color="#747A80" icon={icons.compare}/>,
-        tabActiveIcon:<LordIcon color="#fff" icon={icons.compare}/>,
+        darkModeActiveIcon:<LordIcon color="#fff" icon={icons.compare}/>,
         activeIcon:<LordIcon icon={icons.compare}/>
     },
     {
@@ -30,17 +38,23 @@ export const dashboardLinks:DashboardLinkObject[] = [
         name:"Settings",
         icon:<LordIcon color="#747A80" icon={icons.settings}/>,
         activeIcon:<LordIcon icon={icons.settings}/>,
-        tabActiveIcon:<LordIcon color="#fff" icon={icons.settings}/>
+        darkModeActiveIcon:<LordIcon color="#fff" icon={icons.settings}/>
     },
 ]
 export const bottomBarLinks:DashboardLinkObject[] = [
     {
+        url:`${baseRoute}/`,
+        slug:"dashboard",
+        name:"Dashboard",
+        icon:<LordIcon color="#747A80" icon={icons.analytics}/>,
+        tabActiveIcon:<LordIcon color="#fff" icon={icons.analytics}/>,
+    },
+    {
         url:`${baseRoute}/inbox`,
         slug:"inbox",
         name:"Inbox",
         icon:<LordIcon color="#747A80" icon={icons.inbox}/>,
         tabActiveIcon:<LordIcon color="#fff" icon={icons.inbox}/>,
-        activeIcon:<LordIcon icon={icons.inbox}/>
     },
     {
         url:`${baseRoute}/perks`,
@@ -48,14 +62,12 @@ export const bottomBarLinks:DashboardLinkObject[] = [
         name:"Perks",
         icon:<LordIcon color="#747A80" icon={icons.compare}/>,
         tabActiveIcon:<LordIcon color="#fff" icon={icons.compare}/>,
-        activeIcon:<LordIcon icon={icons.compare}/>
     },
     {
         url:`${baseRoute}/settings`,
         slug:"settings",
         name:"Settings",
         icon:<LordIcon color="#747A80" icon={icons.settings}/>,
-        activeIcon:<LordIcon icon={icons.settings}/>,
         tabActiveIcon:<LordIcon color="#fff" icon={icons.settings}/>
     },
 ]

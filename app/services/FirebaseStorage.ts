@@ -1,5 +1,5 @@
-import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage"
-import { storage } from "../utils/firebaseConfig"
+import { getDownloadURL, getStorage, ref, uploadBytes, uploadString } from "firebase/storage"
+import { app, auth } from "../utils/firebaseConfig"
 import { FirebaseError } from "firebase/app"
 
 interface StorageResponse{
@@ -11,14 +11,15 @@ interface StorageResponse{
 
 class FirebaseStorage{
     async uploadFile(file:File){
+        const storage = getStorage(app,"paygeonv.appspot.com")
         const response:StorageResponse = {
             status:"pending",
             error:"process is still pending"
         }
         const storageRef = ref(storage,`images/${file.name}`)
-        console.log({storageRef,storage})
         try {
             const snapshot = await uploadBytes(storageRef,file)
+            console.log(snapshot)
             const downloadURL = await getDownloadURL(snapshot.ref)
             response.downloadURL = downloadURL
             response.status = 'success'

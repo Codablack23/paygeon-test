@@ -58,6 +58,20 @@ export interface MainLayoutProps{
     active:string,
     children:ReactNode
 }
+export interface OnboardingTaskObject{
+    title:string,
+    id:string,
+    required:boolean,
+    actionURL:string,
+    completed:boolean,
+    actionType:"automation"|"verification"|"link"
+}
+export interface CarouselItemProps{
+    active:number
+    imageUrl:string,
+    title:string,
+    description:string
+}
 export interface DashboardLinkObject{
     url:string,
     name:string,
@@ -65,6 +79,7 @@ export interface DashboardLinkObject{
     icon?:ReactNode,
     activeIcon?:ReactNode,
     tabActiveIcon?:ReactNode
+    darkModeActiveIcon?:ReactNode
     className?:string
     id?:string
     type?:"button"|"url",
@@ -95,4 +110,17 @@ export interface IntegrationDataObject{
     name:string,
     logo:string,
     link:string
+}
+
+export interface OnboardingProps{
+    darkMode:boolean,
+    tasks:OnboardingTaskObject[],
+    completeTask:(id:string)=>void
+}
+
+export interface OnboardingCardProps{
+    task:OnboardingTaskObject,
+    completeTask:(id:string)=>void,
+    actionHandler:()=>void
+
 }

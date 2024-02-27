@@ -11,7 +11,7 @@ import { ThemeContext } from "@/app/contexts/ThemContext";
 import { ConfigProvider } from "antd";
 
 export default  function MainLayout(props:MainLayoutProps){
-    const {loading,user,entity} = useContext(AuthContext)
+    const {loading,user} = useContext(AuthContext)
     const {darkMode} = useContext(ThemeContext)
     useEffect(()=>{
         if(!loading && user === null){
@@ -43,7 +43,7 @@ export default  function MainLayout(props:MainLayoutProps){
                     <DashboardHeader
                         pageTitle={props.active}
                     />
-                    <div className="p-3 md:p-6">
+                    <div className="">
                         {props.children}
                     </div>
                 </section>}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/css';
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css"
 import { AntdRegistry } from '@ant-design/nextjs-registry';

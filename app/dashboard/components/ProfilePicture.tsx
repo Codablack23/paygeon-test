@@ -1,4 +1,5 @@
 import { AuthContext } from "@/app/contexts/AuthContext";
+import FirebaseAuth from "@/app/services/FirebaseAuth";
 import { Image, Popover } from "antd";
 import Link from "next/link";
 import { useContext } from "react";
@@ -8,10 +9,14 @@ interface Props{
 }
 
 function Content(){
+    const handleLogin = async()=>{
+        await FirebaseAuth.signOut()
+        window.location.assign("/accounts/login")
+    }
     return(
         <div className="mr-2 p-1">
             <Link href={"/dashboard/settings"}><button className="w-full bg-theme rounded-md text-white p-2">Settings</button></Link>
-            <button className="w-full p-2">Logout</button>
+            <button onClick={handleLogin} className="w-full p-2">Logout</button>
         </div>
     )
 }

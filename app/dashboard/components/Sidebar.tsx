@@ -12,6 +12,7 @@ function SidebarLink(props:{
     link:DashboardLinkObject,
     active:string
 }){
+    const {darkMode} = useContext(ThemeContext)
     const {link} = props;
     const active = "text-black border-r-4 border-theme"
     const inActive = "text-light"
@@ -32,7 +33,9 @@ function SidebarLink(props:{
         <button
         id={link.id}
         className={`w-full ${link.className} inline-flex items-center gap-4 font-bold py-4 text-left ${isActive?active:inActive}`}>
-        {isActive?link.activeIcon:link.icon}
+        {isActive
+        ?darkMode?link.darkModeActiveIcon:link.activeIcon
+        :link.icon}
         {link.name}
         </button>
     </Link>

@@ -47,6 +47,7 @@ export default function useProfileForm(){
             displayName:(fullName as string)
         })
         setLoading(false)
+        setReadOnly(true)
         if(response.status === "success"){
             return messageApi.success("Profile updated successfully")
         }
@@ -62,6 +63,7 @@ export default function useProfileForm(){
             email:email as string
         })
         setLoading(false)
+        setReadOnly(false)
         if(response.status === "success"){
             return messageApi.success("Profile updated successfully")
         }

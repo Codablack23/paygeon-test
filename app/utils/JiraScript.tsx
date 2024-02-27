@@ -6,6 +6,9 @@ import { useEffect } from "react";
 interface ExtendedWindowObject extends Window{
     [key:string]:any
 }
+interface Props{
+    onLoad?:VoidFunction
+}
 function handleLoadScript(){
     const myWindow:ExtendedWindowObject = window
     const triggerEl = document.querySelector(".report-problem-btn") as HTMLDivElement
@@ -22,12 +25,12 @@ function handleLoadScript(){
    }
 }
 
-export default function JiraScript(){
+export default function JiraScript(props:Props){
     return (
         <>
-        <Script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
+        <Script onLoad={props.onLoad} id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
         <Script id="jira-issue-script" src={JIRA_ISSUE_URL}/>
-        <Script id="my-custom-script" src="/jira-script.js"/>
+        <Script  id="my-custom-script" src="/jira-script.js"/>
         {/* <Script id="my-custom-script" src="/myscript.js"/> */}
         </>
     )

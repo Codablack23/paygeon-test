@@ -29,7 +29,7 @@ export default function useAccountsForm(){
             setLoading(true)
             const response = await FirebaseAuthService.signIn(email,password)
             if(response.status === "success"){
-                    window.location.assign("/dashboard/inbox")
+                    window.location.assign("/dashboard")
                     return null
 
             }
@@ -62,7 +62,7 @@ export default function useAccountsForm(){
                         description:`${response.message}. You will now be redirected to the dashboard`
                     })
                     setTimeout(()=>{
-                        window.location.assign("/dashboard/inbox")
+                        window.location.assign("/dashboard")
                     },5000)
                     return null
                 }

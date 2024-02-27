@@ -1,4 +1,4 @@
-import { User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateCurrentUser, updateProfile } from "firebase/auth"
+import { User, createUserWithEmailAndPassword, signInAnonymously, signInWithEmailAndPassword, signOut, updateCurrentUser, updateProfile } from "firebase/auth"
 import { auth } from "../utils/firebaseConfig"
 import { FirebaseError } from "firebase/app"
 
@@ -25,7 +25,6 @@ function capitalizeWord(word:string){
 }
 class FirebaseAuthService{
     private auth = auth
-
     async signIn(email:string,password:string){
         const response:FirebaseAuthResponse = {
             status:"pending",
