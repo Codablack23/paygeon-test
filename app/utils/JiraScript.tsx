@@ -1,7 +1,6 @@
 "use client";
 import Script from "next/script";
 import { JIRA_ISSUE_URL } from "./constants/jiraConstants";
-import { useEffect } from "react";
 
 interface ExtendedWindowObject extends Window{
     [key:string]:any
