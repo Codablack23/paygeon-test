@@ -5,7 +5,7 @@ import DashboardCarousel from "./DashboardCarousel"
 
 function OnboardingCard(props:OnboardingCardProps){
     const {task} = props
-    const actionText = task.actionType === "link"?"Link Now":task.actionType === "automation"?"Automate Noe":"Verify Now"
+    const actionText = task.actionType === "link"?"Link Now":task.actionType === "automation"?"Automate Now":"Verify Now"
     return (
         <div className="card rounded-sm p-4 mb-4">
             <p className="uppercase light-text-dark text-lg font-bold">{task.required?"important":"optional"}</p>
@@ -23,10 +23,11 @@ export default function Onboarding(props:OnboardingProps){
         }
     }
     return(
-    <div className={`-top-16 p-3 md:p-6 relative min-h-[180px] ${props.darkMode?"dark":"light"}`}>
-       <div className="lg:flex gap-16 w-full">
+    <div className={`-top-32 p-3 md:p-6 relative min-h-[180px] ${props.darkMode?"dark":"light"}`}>
+       <div className="lg:flex gap-8 w-full">
         {props.tasks.length > 0
-        ?(<ul className="flex-[2]">
+        ?(<div className="flex-[3]">
+            <ul className="lg:w-[90%]">
             {props.tasks.map(task=>(
             <OnboardingCard 
             task={task}
@@ -34,14 +35,15 @@ export default function Onboarding(props:OnboardingProps){
             actionHandler={actionHandler(task.id,task.actionURL)}
             key={task.id}/>
             ))}
-        </ul>)
-        :<div className="h-[350px] flex-[2] card p-2 text-center flex items-center justify-center">
+            </ul>
+        </div>)
+        :<div className="h-[350px] flex-[3] lg:w-[90%] card p-2 text-center flex items-center justify-center">
             <div className="flex-1">
-                <p className="font-bold text-xl">You have completed all the ongoing task</p>
+                <p className="font-bold text-xl">No more tasks at this time</p>
             </div>
         </div>
         }
-        <div className="flex-1">
+        <div className="flex-[2]">
             <DashboardCarousel/>
         </div>
        </div>
