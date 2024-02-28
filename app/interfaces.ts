@@ -1,6 +1,7 @@
 import { User } from "firebase/auth";
 import {Mercoa} from  "@mercoa/javascript"
 import { ReactNode } from "react";
+import { FirebaseError } from "firebase/app";
 
 export interface Error{
     [key:string]:{
@@ -85,6 +86,14 @@ export interface DashboardLinkObject{
     type?:"button"|"url",
     handler?:()=>void
 }
+export interface FireStoreResponse{
+    status:"success"|"pending"|"failed",
+    error:null | FirebaseError | string | unknown ,
+    error_message?:null| string,
+    data:null | {
+        [key:string]:any
+    }
+}
 export interface LinkComponentProps{
     link:DashboardLinkObject,
     active:string
@@ -115,12 +124,12 @@ export interface IntegrationDataObject{
 export interface OnboardingProps{
     darkMode:boolean,
     tasks:OnboardingTaskObject[],
-    completeTask:(id:string)=>void
+    completeTask:(id:string)=>Promise<FireStoreResponse>
 }
 
 export interface OnboardingCardProps{
     task:OnboardingTaskObject,
-    completeTask:(id:string)=>void,
+    completeTask:(id:string)=>Promise<FireStoreResponse>,
     actionHandler:()=>void
 
 }

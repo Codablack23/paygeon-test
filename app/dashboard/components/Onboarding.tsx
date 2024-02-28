@@ -1,5 +1,6 @@
 import { OnboardingCardProps, OnboardingProps, OnboardingTaskObject } from "@/app/interfaces"
 import DashboardCarousel from "./DashboardCarousel"
+import { message } from "antd"
 
 
 
@@ -8,18 +9,24 @@ function OnboardingCard(props:OnboardingCardProps){
     const actionText = task.actionType === "link"?"Link Now":task.actionType === "automation"?"Automate Now":"Verify Now"
     return (
         <div className="card rounded-sm p-4 mb-4">
-            <p className="uppercase light-text-dark text-lg font-bold">{task.required?"important":"optional"}</p>
-            <p className="text-xl font-bold mt-1 capitalize">{task.title}<span className="inline-block light-text-dark ml-2 text-sm">3 mins ETA</span></p>
-            {task.required?<p className="my-1 font-semibold">Required</p>:null}
-            <div className="text-right" onClick={props.actionHandler}> <button className="text-right text-theme font-bold capitalize">{actionText} <i className="bi ml-3 bi-arrow-right text-theme"></i></button></div>
+            <p className="uppercase light-text-dark text-xs sm:text-lg font-bold">{task.required?"important":"optional"}</p>
+            <p className="text-lg sm:text-xl font-bold mt-1 capitalize">{task.title}<span className="inline-block light-text-dark ml-2 text-sm">3 mins ETA</span></p>
+            {task.required?<p className="my-1 text-xs sm:text-base font-semibold">Required</p>:null}
+            <div className="text-right"> <button onClick={props.actionHandler} className="text-right text-theme font-bold capitalize text-sm sm:text-base">{actionText} <i className="bi ml-3 bi-arrow-right text-theme"></i></button></div>
         </div>
     )
 }
 export default function Onboarding(props:OnboardingProps){
     function actionHandler(id:string,url:string){
-        return ()=>{
-            props.completeTask(id)
-            window.open(url,"_blank")
+        return async()=>{
+            const response = await props.completeTask(id)
+            console.log(response)
+            if(response.status === "success"){
+                window.open(url,"_blank")
+            }else{
+                message.error("Sorry could not process this at the moment")
+            }
+            
         }
     }
     return(

@@ -20,13 +20,13 @@ export default function DashboardHero(props:Props){
     const firstName = name.split(" ")[0]
     return (
         <div>
-            <section className="section-chart">
-                <div className="font-bold text-2xl text-center text-white">
+            <section className="section-chart min-h-[400px]">
+                <div className="font-bold p-2 text-xl xl:text-2xl text-center text-white">
                     <p >Hello {firstName}, you have</p>
-                    <p className="text-7xl">{props.tasksLeft}</p>
+                    <p className="text-4xl sm:text-7xl">{props.tasksLeft}</p>
                     <p>tasks that need your attention</p>
                 </div>
-                <div className="tabs-content w-tab-content">
+                <div className="tabs-content hidden md:block w-tab-content">
                 <div data-w-tab="1M" className="tab_pane w-tab-pane w--tab-active">
                     <div className="tab_content-wrapper">
                         <Vector darkMode={darkMode}/>
