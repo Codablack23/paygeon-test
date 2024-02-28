@@ -109,7 +109,7 @@ export default function Page(){
                 </div>  
                 <div className="flex items-center gap-2 mb-12">
                         <Checkbox checked/>
-                        <p className="text-light font-bold text-sm">I have read and agree to Terms of Service</p>
+                        <p className="text-light font-bold text-sm">I have read and agree to <Link target="_blank" href={"https://legal.paygeon.com/terms-and-conditions"}><span className="cursor-pointer text-theme">Terms of Service</span></Link></p>
                 </div>
                 <button disabled={loading} className="w-full my-4 bg-theme disabled:bg-gray-200 disabled:cursor-not-allowed text-white py-3 rounded-lg text-lg font-bold">
                     {loading

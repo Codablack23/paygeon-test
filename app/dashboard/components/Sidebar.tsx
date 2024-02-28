@@ -14,7 +14,7 @@ function SidebarLink(props:{
 }){
     const {darkMode} = useContext(ThemeContext)
     const {link} = props;
-    const active = "text-black border-r-4 border-theme"
+    const active = "border-r-4 border-theme"
     const inActive = "text-light"
     const isActive = props.active === link.slug
     if(link.type === "button"){

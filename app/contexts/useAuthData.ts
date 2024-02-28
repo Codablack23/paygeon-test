@@ -22,12 +22,11 @@ export default function useAuthData(){
                 setUser(userData)
                 getMercoaEntity(userData.uid)
                 setLoading(false)
+            }else{
+                setLoading(false)
             }
         })
     },[])
-    useEffect(()=>{
-    },[user])
-
     return {
         loading,
         user,

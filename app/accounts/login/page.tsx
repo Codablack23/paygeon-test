@@ -84,14 +84,14 @@ export default function Page(){
                     ?<Spin/>
                     :"Sign In"}
                 </button>
-                <div className="my-2 mb-6 max-w-[300px] mx-auto flex items-center gap-2">
+                {/* <div className="my-2 mb-6 max-w-[300px] mx-auto flex items-center gap-2">
                     <hr className="flex-1"/>
                     <p className="text-sm text-light">or</p>
                     <hr className="flex-1"/>
                 </div>
                 <Link href={"/accounts/recover-password"}>
                     <button type="button" className="py-3 border border-light-800 w-full rounded-lg text-lg font-bold">Login with QR code</button>
-                </Link>
+                </Link> */}
                 <p className="my-10 gap-4 text-center">
                     <span>You don&apos;t have an account? </span>
                     <Link href={"/accounts/register"}>

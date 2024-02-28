@@ -6,7 +6,7 @@ export default function Invoices(){
 
     return(
         <MainLayout active="inbox">
-                <div className="p-3 md:p-6">
+                <div className="p-3 md:p-6 text-black">
                 <MercoaPage/>
                 </div>
         </MainLayout>

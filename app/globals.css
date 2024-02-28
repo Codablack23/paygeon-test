@@ -19,6 +19,12 @@
 .app.dark .text-theme{
   color:#0052FF;
 }
+.app.dark .text-black{
+  color:#000;
+}
+.app.dark .text-black *{
+  color:#000;
+}
 .app,
 .app .light{
   background: #fff;
@@ -84,11 +90,11 @@
 }
 
 .accounts-bg{
-  background-image: url("/images/bg.png");
+  background-image:url("/images/account-bg.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+}
+.account-container-overlay{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0)) ;
 }
 
 .theme-scrollbar::-webkit-scrollbar {
